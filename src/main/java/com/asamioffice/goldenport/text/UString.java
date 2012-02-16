@@ -9,8 +9,9 @@ import java.util.StringTokenizer;
  * String utility
  *
  * @since   Apr. 18, 1998
- * @version Dec. 20, 2006
- * @version Dec.  5, 2011
+ *  version Dec. 20, 2006
+ *  version Dec.  5, 2011
+ * @version Feb. 15, 2012
  * @author  ASAMI, Tomoharu (asami@AsamiOffice.com)
  */
 public class UString {
@@ -24,6 +25,11 @@ public class UString {
 
     public static boolean notNull(String string) {
         return (string != null && !string.equals(""));
+    }
+
+    public static String lift(String string) {
+      if (string == null) return "";
+      else return string;
     }
 
     /**
