@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.goldenport</groupId>
   <artifactId>goldenport-java-lib</artifactId>
-  <version>0.1.1-SNAPSHOT</version>
+  <version>0.1.1</version>
   <name>Goldenport Java Library</name>
   <url>http://www.asamioffice.com</url>
   <organization>

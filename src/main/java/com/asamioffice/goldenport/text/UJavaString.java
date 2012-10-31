@@ -4,7 +4,8 @@ package com.asamioffice.goldenport.text;
  * String utility for java meta model
  *
  * @since   Mar. 25, 2006
- * @version Mar. 24, 2009
+ *  version Mar. 24, 2009
+ * @version Nov.  1, 2012
  * @author  ASAMI, Tomoharu (asami@AsamiOffice.com)
  */
 public class UJavaString {
@@ -70,6 +71,11 @@ public class UJavaString {
             return (text);
         }
         StringBuffer buffer = new StringBuffer();
+        escapeJavaText(text, buffer);
+        return (new String(buffer));
+    }
+
+    public static void escapeJavaText(String text, StringBuffer buffer) {
         int size = text.length();
         for (int i = 0; i < size; i++) {
             char c = text.charAt(i);
@@ -91,6 +97,13 @@ public class UJavaString {
                     buffer.append(c);
             }
         }
+    }        
+
+    public static String stringLiteral(String text) {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append('"');
+        escapeJavaText(text, buffer);
+        buffer.append('"');
         return (new String(buffer));
     }
 
