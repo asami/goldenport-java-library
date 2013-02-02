@@ -5,13 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
-/**
+/*
  * String utility
  *
  * @since   Apr. 18, 1998
  *  version Dec. 20, 2006
  *  version Dec.  5, 2011
- * @version Feb. 15, 2012
+ *  version Feb. 15, 2012
+ * @version Feb.  2, 2013
  * @author  ASAMI, Tomoharu (asami@AsamiOffice.com)
  */
 public class UString {
@@ -25,6 +26,18 @@ public class UString {
 
     public static boolean notNull(String string) {
         return (string != null && !string.equals(""));
+    }
+
+    public static boolean isBlank(CharSequence cs) { // 2012-12-27
+        if (isNull(cs)) {
+            return true;
+        } else {
+            return cs.toString().length() == 0;
+        }
+    }
+
+    public static boolean isNotBlank(CharSequence cs) { // 2012-12-27
+        return !isBlank(cs);
     }
 
     public static String lift(String string) {
