@@ -12,7 +12,8 @@ import java.util.StringTokenizer;
  *  version Dec. 20, 2006
  *  version Dec.  5, 2011
  *  version Feb. 15, 2012
- * @version Feb.  2, 2013
+ *  version Feb.  2, 2013
+ * @version Feb.  2, 2020
  * @author  ASAMI, Tomoharu (asami@AsamiOffice.com)
  */
 public class UString {
@@ -115,8 +116,9 @@ public class UString {
                 case 2 :
                     if (c == '\r') {
                         // illegal sequence
+                        list.add(new String(buffer));
+                        buffer = new StringBuilder();
                         status = 1;
-                        throw (new InternalError("debug"));
                     } else if (c == '\n') {
                         list.add(new String(buffer));
                         buffer = new StringBuilder();
@@ -135,8 +137,9 @@ public class UString {
                         status = 1;
                     } else if (c == '\n') {
                         // illegal sequence
+                        list.add(new String(buffer));
+                        buffer = new StringBuilder();
                         status = 2;
-                        throw (new InternalError("debug"));
                     } else {
                         list.add(new String(buffer));
                         buffer = new StringBuilder();
